@@ -7,5 +7,10 @@ CinemaController
 
 * Depends on Qt 5
 
+* launch.sh and shutdown.sh need to both be manually installed to the bindir for the system to work
+
 * For help, go to #icucinema on freenode.
+
+* More information on how we got it all set up and running is here:
+  http://grundleborg.com/d/article/cinema/20130314/raspberry-pi-qt5-and-ancient-elo-touchscreen
 
