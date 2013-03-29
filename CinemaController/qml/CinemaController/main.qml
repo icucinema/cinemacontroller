@@ -1,5 +1,4 @@
 import QtQuick 2.0
-import QtDesktop 1.0
 import uk.co.icucinema.ScreenControlPoint 1.0
 import uk.co.icucinema.System 1.0
 
@@ -15,6 +14,14 @@ Rectangle {
 
     System {
         id: system
+    }
+
+    Text {
+        id: shuttingDownText
+        anchors.centerIn: parent
+        text: "Shutting Down..."
+        font.pixelSize: 36
+        visible: false
     }
 
     Column {
@@ -139,8 +146,8 @@ Rectangle {
 
                 Text {
                     anchors.centerIn: parent
-                    text: "Exit"
-                    font.pixelSize: 36
+                    text: "Login Shell"
+                    font.pixelSize: 30
                 }
 
                 MouseArea {
@@ -149,12 +156,15 @@ Rectangle {
                     onPressed: {
                         console.log("mouse button pressed")
                         exitButton.color = "#aaf"
-                        system.exit()
                     }
 
                     onReleased: {
                         console.log("mouse button released")
                         exitButton.color = "#66f"
+                    }
+
+                    onClicked: {
+                        system.exit()
                     }
 
                 }
@@ -187,15 +197,17 @@ Rectangle {
                     onPressed: {
                         console.log("mouse button pressed")
                         shutdownButton.color = "#aaf"
-                        system.shutdown()
                     }
 
                     onReleased: {
                         console.log("mouse button released")
                         shutdownButton.color = "#66f"
-                    }
+                        shuttingDownText.visible = true
+                        column.visible = false
+                        system.shutdown()
+                   }
 
-                }
+               }
             }
         }
     }
