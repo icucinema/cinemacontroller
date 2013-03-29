@@ -1,0 +1,11 @@
+CinemaController
+================
+
+* License is LGPL v2.1+ unless otherwise specified.
+
+* Compile each subdirectory individually - they are currently separate qmake projects
+
+* Depends on Qt 5
+
+* For help, go to #icucinema on freenode.
+
